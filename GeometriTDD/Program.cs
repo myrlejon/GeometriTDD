@@ -6,8 +6,13 @@ namespace GeometriTDD
     {
         static void Main(string[] args)
         {
-            var sq = new Triangle(6);
-            Console.WriteLine($"Triangels area: {sq.OmkretsLiksig()}");
+            var triangle = new Geometry.Triangle(10);
+            var square = new Geometry.Square(10);
+            var circle = new Geometry.Circle(5);
+
+            GeometricThing[] array = new GeometricThing[] { square, triangle, circle };
+            var geocal = new GeometricCalculator();
+            Console.WriteLine(geocal.GetArea(circle));
         }
     }
 }
