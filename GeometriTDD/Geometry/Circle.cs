@@ -14,12 +14,20 @@ namespace GeometriTDD.Geometry
 
         public override float GetArea()
         {
-            return Radie * Radie * 3.1415926535f;
+            if (Radie > 0)
+            {
+                return Radie * Radie * 3.1415926535f;
+            }
+            return 0;
         }
 
         public override float GetPerimeter()
         {
-            return (Radie * 2) * 3.1415926535f;
+            if (Radie > 0)
+            {
+                return (Radie * 2) * 3.1415926535f;
+            }
+            return 0;
         }
     }
 }

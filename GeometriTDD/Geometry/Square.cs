@@ -15,12 +15,20 @@ namespace GeometriTDD.Geometry
 
         public override float GetArea()
         {
-            return Side * 2;
+            if (Side > 0)
+            {
+                return Side * Side;
+            }
+            else return 0;
         }
 
         public override float GetPerimeter()
         {
-            return Side * 4;
+            if (Side > 0)
+            {
+                return Side * 4;
+            }
+            else return 0;
         }
     }
 }

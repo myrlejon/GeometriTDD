@@ -4,39 +4,34 @@ using System.Text;
 
 namespace GeometriTDD.Geometry
 {
+    /// <summary>
+    /// Bestämde mig för att bara ha denna metod för att räkna ut liksidiga trianglar, kan fokusera mer på tester i sådanna fall.
+    /// </summary>
     public class Triangle : GeometricThing
     {
-        public float Bas { get; set; }
-        public float Height { get; set; }
-        public float Side3 { get; set; }
+        public float Side { get; set; }
 
-        public Triangle()
+        public Triangle(float side)
         {
-
-        }
-
-        // Liksidig triangel
-        public Triangle(float bas)
-        {
-            Bas = bas;
-        }
-
-
-        public Triangle(float bas, float height)
-        {
-            Bas = bas;
-            Height = height;
+            Side = side;
         }
 
         public override float GetArea()
         {
-            return Bas * Height / 2;
+            if (Side > 0)
+            {
+                return Side * Side / 2;
+            }
+            return 0;
         }
 
         public override float GetPerimeter()
         {
-            float pythagoras = (float)Math.Sqrt(Bas * Bas) + (float)Math.Sqrt(Height * Height) / 2;
-            return Bas + Height + pythagoras;
+            if (Side > 0)
+            {
+                return Side * 3;
+            }
+            return 0;
         }
     }
 }

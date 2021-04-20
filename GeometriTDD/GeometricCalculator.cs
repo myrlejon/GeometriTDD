@@ -9,8 +9,12 @@ namespace GeometriTDD
 
         public float GetPerimeter(GeometricThing thing)
         {
-            float perimeter;
-            perimeter = thing.GetArea();
+            float perimeter = 0;
+            float shape = thing.GetPerimeter();
+            if (shape > 0)
+            {
+                perimeter = shape;
+            }
             return perimeter;
         }
 
@@ -19,15 +23,23 @@ namespace GeometriTDD
             float perimeter = 0;
             for (int i = 0; i < things.Length; i++)
             {
-                perimeter += things[i].GetPerimeter();
+                float shape = things[i].GetPerimeter();
+                if (shape > 0)
+                {
+                    perimeter += things[i].GetPerimeter();
+                }
             }
             return perimeter;
         }
 
         public float GetArea(GeometricThing thing)
         {
-            float area;
-            area = thing.GetArea();
+            float area = 0;
+            float shape = thing.GetArea();
+            if (shape > 0)
+            {
+                area = shape;
+            }
             return area;
         }
 
@@ -36,7 +48,11 @@ namespace GeometriTDD
             float area = 0;
             for (int i = 0; i < things.Length; i++)
             {
-                area += things[i].GetArea();
+                float shape = things[i].GetArea();
+                if (shape > 0)
+                {
+                    area += things[i].GetArea();
+                }
             }
             return area;
         }

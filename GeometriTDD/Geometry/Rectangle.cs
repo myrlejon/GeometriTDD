@@ -17,7 +17,10 @@ namespace GeometriTDD.Geometry
 
         public override float GetArea()
         {
-            return Bas * Height;
+            if (Bas > 0 && Height > 0)
+            {
+                return Bas * Height;
+            }
         }
 
         public override float GetPerimeter()
