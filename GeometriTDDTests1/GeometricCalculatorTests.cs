@@ -29,10 +29,8 @@ namespace GeometriTDD.Tests
         {
             var calc = new GeometricCalculator();
             float expected = 100f;
-            var actual = calc.GetArea(new GeometricThing[]
-            {
-                new Geometry.Square(10)
-            });
+            var square = new Geometry.Square(10);
+            var actual = calc.GetArea(square);
             Assert.AreEqual(expected, actual);
         }
 
@@ -41,10 +39,8 @@ namespace GeometriTDD.Tests
         {
             var calc = new GeometricCalculator();
             float expected = 0f;
-            var actual = calc.GetArea(new GeometricThing[]
-            {
-                new Geometry.Square(-10)
-            });
+            var square = new Geometry.Square(-10);
+            var actual = calc.GetArea(square);
             Assert.AreEqual(expected, actual);
         }
 
@@ -53,10 +49,8 @@ namespace GeometriTDD.Tests
         {
             var calc = new GeometricCalculator();
             float expected = 0f;
-            var actual = calc.GetArea(new GeometricThing[]
-            {
-                new Geometry.Square(0)
-            });
+            var square = new Geometry.Square(0);
+            var actual = calc.GetArea(square);
             Assert.AreEqual(expected, actual);
         }
 
@@ -71,6 +65,21 @@ namespace GeometriTDD.Tests
                 new Geometry.Circle(0),
                 new Geometry.Rectangle(10, -20),
                 new Geometry.Triangle(10)
+            });
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void GetAreaTestOnlyNegatives()
+        {
+            var calc = new GeometricCalculator();
+            float expected = 0f;
+            var actual = calc.GetArea(new GeometricThing[]
+            {
+                new Geometry.Square(-630),
+                new Geometry.Circle(-13.52314f),
+                new Geometry.Rectangle(-20, -500),
+                new Geometry.Triangle(-3000)
             });
             Assert.AreEqual(expected, actual);
         }
@@ -110,10 +119,8 @@ namespace GeometriTDD.Tests
         {
             var calc = new GeometricCalculator();
             float expected = 40f;
-            var actual = calc.GetPerimeter(new GeometricThing[]
-            {
-                new Geometry.Square(10)
-            });
+            var square = new Geometry.Square(10);
+            var actual = calc.GetPerimeter(square);
             Assert.AreEqual(expected, actual);
         }
 
@@ -122,10 +129,18 @@ namespace GeometriTDD.Tests
         {
             var calc = new GeometricCalculator();
             float expected = 0f;
-            var actual = calc.GetPerimeter(new GeometricThing[]
-            {
-                new Geometry.Square(-10)
-            });
+            var square = new Geometry.Square(-10);
+            var actual = calc.GetPerimeter(square);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void GetPerimeterTestOneShapeNull()
+        {
+            var calc = new GeometricCalculator();
+            float expected = 0f;
+            var square = new Geometry.Square(0);
+            var actual = calc.GetPerimeter(square);
             Assert.AreEqual(expected, actual);
         }
 

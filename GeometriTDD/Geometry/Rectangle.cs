@@ -21,11 +21,16 @@ namespace GeometriTDD.Geometry
             {
                 return Bas * Height;
             }
+            return 0;
         }
 
         public override float GetPerimeter()
         {
-            return Bas + Bas + Height + Height;
+            if (Bas > 0 && Height > 0)
+            {
+                return Bas + Bas + Height + Height;
+            }
+            return 0;
         }
     }
 }

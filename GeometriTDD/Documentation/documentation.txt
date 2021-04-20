@@ -3,6 +3,7 @@
 Metoderna kunde köras med negativa värden (ex. Rectangle(10, -20)), så jag la till if (shape > 0) i GeometricCalculator klassens metoder.
 
 - Testat GeometricCalculator GetArea() med en form, tester på positiva, negativa och null värden.
+- Testat GeometricCalculator GetPerimeter() med en form, tester på positiva, negativa och null värden.
 Var tvungen att lägga till if (Side > 0) i Squares klassmetod, för det gick att gångra två stycken negativa sidor och få ett positivt värde.
 Nu har jag lagt till så att alla klasser behöver ha positiva värden för att kunna köras, annars så returneras 0.
-- Testat GeometricCalculator GetPerimeter() med en form, tester på positiva, negativa och null värden.
+

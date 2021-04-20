@@ -10,6 +10,7 @@ namespace GeometriTDD
             var square = new Geometry.Square(10);
             var circle = new Geometry.Circle(5);
             var rectangle = new Geometry.Rectangle(10, 20);
+            var test = square.GetArea();
 
             GeometricThing[] array = new GeometricThing[] { square, triangle, circle, rectangle };
             var geocal = new GeometricCalculator();
