@@ -4,6 +4,9 @@ using System.Text;
 
 namespace GeometriTDD.Geometry
 {
+    /// <summary>
+    /// Klass som räknar ut arean och omkretsen av en rektangel, ärver ifrån GeometricThing
+    /// </summary>
     public class Rectangle : GeometricThing
     {
         public float Bas { get; set; }

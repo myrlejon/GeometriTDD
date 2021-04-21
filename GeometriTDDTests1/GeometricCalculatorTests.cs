@@ -6,6 +6,9 @@ using System.Text;
 
 namespace GeometriTDD.Tests
 {
+    /// <summary>
+    /// I denna klassen så kör jag alla metoder för tester. Se bifogad PDF i den komprimerade mappen för att se dokumentation.
+    /// </summary>
     [TestClass()]
     public class GeometricCalculatorTests
     {

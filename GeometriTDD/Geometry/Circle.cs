@@ -4,6 +4,9 @@ using System.Text;
 
 namespace GeometriTDD.Geometry
 {
+    /// <summary>
+    /// Klass som räknar ut arean och omkretsen av en cirkel, ärver ifrån GeometricThing
+    /// </summary>
     public class Circle : GeometricThing
     {
         public float Radie { get; set; }

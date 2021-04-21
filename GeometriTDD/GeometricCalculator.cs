@@ -4,6 +4,10 @@ using System.Text;
 
 namespace GeometriTDD
 {
+    /// <summary>
+    /// Denna klassen innehåller metoder som beräknar omkrets och area om en eller flera former.
+    /// Alla metoder är baserade på klassen GeometricThing
+    /// </summary>
     public class GeometricCalculator
     {
 

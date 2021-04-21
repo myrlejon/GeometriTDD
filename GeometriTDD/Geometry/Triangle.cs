@@ -5,6 +5,7 @@ using System.Text;
 namespace GeometriTDD.Geometry
 {
     /// <summary>
+    /// Klass som räknar ut arean och omkretsen av en triangel, ärver ifrån GeometricThing.
     /// Bestämde mig för att bara ha denna metod för att räkna ut liksidiga trianglar, kan fokusera mer på tester i sådanna fall.
     /// </summary>
     public class Triangle : GeometricThing

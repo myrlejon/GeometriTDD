@@ -4,6 +4,9 @@ using System.Text;
 
 namespace GeometriTDD.Geometry
 {
+    /// <summary>
+    /// Klass som räknar ut arean och omkretsen av en kvadrat, ärver ifrån GeometricThing
+    /// </summary>
     public class Square : GeometricThing
     {
         public float Side { get; set; }
