@@ -6,11 +6,15 @@ namespace GeometriTDD
 {
     /// <summary>
     /// Denna klassen innehåller metoder som beräknar omkrets och area om en eller flera former.
-    /// Alla metoder är baserade på klassen GeometricThing
+    /// Alla metoder är baserade på klassen GeometricThing.
     /// </summary>
     public class GeometricCalculator
     {
-
+        /// <summary>
+        /// Denna metoden används för att räkna ut omkretsen av en geometrisk form (Triangle, Square, Rectangle, Circle).
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <returns></returns>
         public float GetPerimeter(GeometricThing thing)
         {
             float perimeter = 0;
@@ -22,20 +26,33 @@ namespace GeometriTDD
             return perimeter;
         }
 
+        /// <summary>
+        /// Denna metoden används för att räkna ut omkretsen av en eller flera geometrisk former (Triangle, Square, Rectangle, Circle).
+        /// </summary>
+        /// <param name="things"></param>
+        /// <returns></returns>
         public float GetPerimeter(GeometricThing[] things)
         {
             float perimeter = 0;
-            for (int i = 0; i < things.Length; i++)
+            if (things.Length > 0)
             {
-                float shape = things[i].GetPerimeter();
-                if (shape > 0)
+                for (int i = 0; i < things.Length; i++)
                 {
-                    perimeter += things[i].GetPerimeter();
+                    float shape = things[i].GetPerimeter();
+                    if (shape > 0)
+                    {
+                        perimeter += things[i].GetPerimeter();
+                    }
                 }
             }
             return perimeter;
         }
 
+        /// <summary>
+        /// Denna metoden används för att räkna ut arean av en geometrisk form (Triangle, Square, Rectangle, Circle).
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <returns></returns>
         public float GetArea(GeometricThing thing)
         {
             float area = 0;
@@ -47,15 +64,23 @@ namespace GeometriTDD
             return area;
         }
 
+        /// <summary>
+        /// Denna metoden används för att räkna ut arean av en eller flera geometriska former (Triangle, Square, Rectangle, Circle).
+        /// </summary>
+        /// <param name="things"></param>
+        /// <returns></returns>
         public float GetArea(GeometricThing[] things)
         {
             float area = 0;
-            for (int i = 0; i < things.Length; i++)
+            if (things.Length > 0)
             {
-                float shape = things[i].GetArea();
-                if (shape > 0)
+                for (int i = 0; i < things.Length; i++)
                 {
-                    area += things[i].GetArea();
+                    float shape = things[i].GetArea();
+                    if (shape > 0)
+                    {
+                        area += things[i].GetArea();
+                    }
                 }
             }
             return area;

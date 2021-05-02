@@ -9,13 +9,32 @@ namespace GeometriTDD.Geometry
     /// </summary>
     public class Square : GeometricThing
     {
+        /// <summary>
+        /// Property för kvadratens Side, används i metoderna GetArea() och GetPerimeter()
+        /// </summary>
         public float Side { get; set; }
 
+        /// <summary>
+        /// Konstruktor som använders sig av kvadratens Side.
+        /// </summary>
+        /// <param name="side"></param>
         public Square(float side)
         {
             Side = side;
         }
 
+        /// <summary>
+        /// En tom konstruktor som hanterar null värden.
+        /// </summary>
+        public Square()
+        {
+
+        }
+
+        /// <summary>
+        /// Denna metod används för att räkna ut kvadratens area.
+        /// </summary>
+        /// <returns></returns>
         public override float GetArea()
         {
             if (Side > 0)
@@ -25,6 +44,10 @@ namespace GeometriTDD.Geometry
             else return 0;
         }
 
+        /// <summary>
+        /// Denna metod används för att räkna ut kvadratens omkrets.
+        /// </summary>
+        /// <returns></returns>
         public override float GetPerimeter()
         {
             if (Side > 0)

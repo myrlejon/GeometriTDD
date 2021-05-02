@@ -3,6 +3,7 @@ using GeometriTDD;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using GeometriTDD.Geometry;
 
 namespace GeometriTDD.Tests
 {
@@ -147,6 +148,46 @@ namespace GeometriTDD.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod()]
+        public void GetPerimeterEmptyArray()
+        {
+            var calc = new GeometricCalculator();
+            float expected = 0f;
+            var actual = calc.GetPerimeter(new GeometricThing[]
+            {
+
+            });
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetPerimeterOneNullArray()
+        {
+            var calc = new GeometricCalculator();
+            float expected = 70f;
+            var actual = calc.GetPerimeter(new GeometricThing[]
+            {
+                new Geometry.Square(10),
+                new Geometry.Rectangle(5, 10),
+                new Geometry.Circle()
+            });
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetAreaAllNullArray()
+        {
+            var calc = new GeometricCalculator();
+            float expected = 0f;
+            var actual = calc.GetPerimeter(new GeometricThing[]
+            {
+                new Geometry.Square(),
+                new Geometry.Rectangle(),
+                new Geometry.Circle(),
+                new Geometry.Triangle()
+            });
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 }
