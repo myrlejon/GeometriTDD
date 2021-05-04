@@ -179,12 +179,22 @@ namespace GeometriTDD.Tests
         {
             var calc = new GeometricCalculator();
             float expected = 0f;
+            var actual = calc.GetArea(new GeometricThing[]{null});
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetPerimeterManyNullValues()
+        {
+            var calc = new GeometricCalculator();
+            float expected = 40f;
             var actual = calc.GetPerimeter(new GeometricThing[]
             {
-                new Geometry.Square(),
-                new Geometry.Rectangle(),
-                new Geometry.Circle(),
-                new Geometry.Triangle()
+                new Geometry.Square(10),
+                new Geometry.Triangle(),
+                null,
+                new Geometry.Circle(0)
+
             });
             Assert.AreEqual(expected, actual);
         }

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Data;
+using System.Linq.Expressions;
 
 namespace GeometriTDD
 {
@@ -18,10 +18,13 @@ namespace GeometriTDD
         public float GetPerimeter(GeometricThing thing)
         {
             float perimeter = 0;
-            float shape = thing.GetPerimeter();
-            if (shape > 0)
+            if (thing != null)
             {
-                perimeter = shape;
+                float shape = thing.GetPerimeter();
+                if (shape > 0)
+                {
+                    perimeter = shape;
+                }
             }
             return perimeter;
         }
@@ -34,14 +37,18 @@ namespace GeometriTDD
         public float GetPerimeter(GeometricThing[] things)
         {
             float perimeter = 0;
-            if (things.Length > 0)
+            for (int i = 0; i < things.Length; i++)
             {
-                for (int i = 0; i < things.Length; i++)
+                if (things[i] != null)
                 {
                     float shape = things[i].GetPerimeter();
                     if (shape > 0)
                     {
                         perimeter += things[i].GetPerimeter();
+                    }
+                    else if (shape == 0)
+                    {
+                        perimeter += 0;
                     }
                 }
             }
@@ -56,10 +63,13 @@ namespace GeometriTDD
         public float GetArea(GeometricThing thing)
         {
             float area = 0;
-            float shape = thing.GetArea();
-            if (shape > 0)
+            if (thing != null)
             {
-                area = shape;
+                float shape = thing.GetArea();
+                if (shape > 0)
+                {
+                    area = shape;
+                }
             }
             return area;
         }
@@ -72,14 +82,18 @@ namespace GeometriTDD
         public float GetArea(GeometricThing[] things)
         {
             float area = 0;
-            if (things.Length > 0)
+            for (int i = 0; i < things.Length; i++)
             {
-                for (int i = 0; i < things.Length; i++)
+                if (things[i] != null)
                 {
                     float shape = things[i].GetArea();
                     if (shape > 0)
                     {
                         area += things[i].GetArea();
+                    }
+                    else if (shape == 0)
+                    {
+                        area += 0;
                     }
                 }
             }

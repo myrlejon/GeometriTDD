@@ -15,9 +15,11 @@ namespace GeometriTDD
             var circle = new Geometry.Circle(5);
             var rectangle = new Geometry.Rectangle(10, 20);
 
-            GeometricThing[] array = new GeometricThing[] { square, triangle, circle, rectangle };
+            GeometricThing[] array = new GeometricThing[] {null};
             var geocal = new GeometricCalculator();
+            geocal.GetArea(array);
             Console.WriteLine(geocal.GetArea(array));
+
         }
     }
 }
